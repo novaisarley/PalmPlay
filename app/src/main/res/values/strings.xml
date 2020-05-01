@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Projeto2020</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="entrar">Entrar</string>
 </resources>
