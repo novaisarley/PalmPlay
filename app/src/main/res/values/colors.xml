@@ -2,5 +2,9 @@
 <resources>
     <color name="colorPrimary">#000</color>
     <color name="colorPrimaryDark">#C2C2C2</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#C49FFF</color>
+    <color name="primaryBlue">#014DA1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="input_lavanda">#E9CEFF</color>
+    <color name="background_lavanda">#C49FFF</color>
 </resources>
