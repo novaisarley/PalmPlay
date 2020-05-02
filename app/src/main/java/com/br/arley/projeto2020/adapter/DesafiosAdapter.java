@@ -1,4 +1,60 @@
 package com.br.arley.projeto2020.adapter;
 
-public class DesafiosAdapter {
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.List;
+
+import com.br.arley.projeto2020.R;
+import com.br.arley.projeto2020.model.Desafio;
+
+public class DesafiosAdapter extends BaseAdapter {
+
+    List<Desafio> desafioList;
+    Context context;
+
+    public DesafiosAdapter(List<Desafio> desafioList, Context context) {
+        this.desafioList = desafioList;
+        this.context = context;
+    }
+
+    @Override
+    public int getCount() {
+        return desafioList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return desafioList.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.itens_atividade, parent, false);
+
+        TextView tvnome = view.findViewById(R.id.tvNome);
+        TextView tvdescricao = view.findViewById(R.id.tvDescricao);
+        ImageView ivdesafio = view.findViewById(R.id.ivDesafio);
+        ImageView ivplay = view.findViewById(R.id.ivPlay);
+
+        Desafio desafio = desafioList.get(position);
+
+        tvnome.setText(desafio.getNome());
+        tvdescricao.setText(desafio.getDescricao());
+
+
+        return view;
+    }
 }

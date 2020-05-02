@@ -162,7 +162,7 @@
             app:layout_constraintGuide_percent="0.83" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/activity_login_bt_entrar"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:background="@drawable/button_box"
