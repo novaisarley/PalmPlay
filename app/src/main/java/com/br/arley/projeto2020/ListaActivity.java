@@ -16,12 +16,18 @@ public class ListaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_desafios);
+        setContentView(R.layout.activity_lista);
 
-        ListDesafios =  findViewById(R.id.lvDesafios);
+        ListDesafios =  findViewById(R.id.activity_lista_lv_desafio);
 
         List<Desafio> desafioslist = new ArrayList<Desafio>();
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector,png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
+        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png", "@drawable/elipse.png"));
         DesafiosAdapter adapter = new DesafiosAdapter(desafioslist, this);
 
         ListDesafios.setAdapter(adapter);

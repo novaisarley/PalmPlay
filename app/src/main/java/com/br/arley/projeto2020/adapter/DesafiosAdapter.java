@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,15 +45,10 @@ public class DesafiosAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.itens_atividade, parent, false);
 
-        TextView tvnome = view.findViewById(R.id.tvNome);
-        TextView tvdescricao = view.findViewById(R.id.tvDescricao);
-        ImageView ivdesafio = view.findViewById(R.id.ivDesafio);
-        ImageView ivplay = view.findViewById(R.id.ivPlay);
-
-        Desafio desafio = desafioList.get(position);
-
-        tvnome.setText(desafio.getNome());
-        tvdescricao.setText(desafio.getDescricao());
+        TextView tvNome = view.findViewById(R.id.item_atividade_tv_nome);
+        TextView tvDescricao = view.findViewById(R.id.item_atividade_tv_descricao);
+        ImageView ivDesafio = view.findViewById(R.id.item_atividade_iv_image);
+        ImageButton ibPlay = view.findViewById(R.id.item_atividade_ib_play);
 
 
         return view;

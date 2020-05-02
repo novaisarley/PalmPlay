@@ -5,6 +5,8 @@
     <color name="colorAccent">#C49FFF</color>
     <color name="primaryBlue">#014DA1</color>
     <color name="white">#FFFFFF</color>
-    <color name="input_lavanda">#E9CEFF</color>
-    <color name="background_lavanda">#C49FFF</color>
+    <color name="inputLavanda">#E9CEFF</color>
+    <color name="backgroundLavanda">#C49FFF</color>
+    <color name="itemGray">#747474</color>
+    <color name="itemSoftBlue">#8CDAFF</color>
 </resources>
