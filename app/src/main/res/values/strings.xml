@@ -9,4 +9,5 @@
     <string name="ja_tem_cadastro">Já tem cadastro?</string>
     <string name="confirmar_senha">Confirmar senha</string>
     <string name="salvar">Salvar</string>
+    <string name="preencha_todos_campos">Preencha todos os campos</string>
 </resources>

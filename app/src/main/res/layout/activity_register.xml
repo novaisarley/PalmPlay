@@ -97,7 +97,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/activity_register_edt_email"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/input_box"
@@ -112,7 +112,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/activity_register_edt_password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/input_box"
@@ -121,12 +121,11 @@
             android:paddingHorizontal="10dp"
             android:shadowRadius="10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.68"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/activity_register_edt_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/input_box"
@@ -152,7 +151,7 @@
             android:textColor="@color/primaryBlue"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_register_edt_confirm_password" />
 
         <TextView
             android:id="@+id/textView2"

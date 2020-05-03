@@ -1,9 +1,13 @@
 package com.br.arley.projeto2020;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,12 +22,16 @@ public class ListaActivity extends AppCompatActivity {
 
     RecyclerView recyclerViewDesafios;
     MyRecyclerViewAdapter desafiosAdapter;
+    CardView btnPerfil;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
+
+        setComponentsId();
+        setComponentsClickListeners();
 
         recyclerViewDesafios =  findViewById(R.id.activity_lista_rv_desafio);
         recyclerViewDesafios.setLayoutManager(new LinearLayoutManager(this));
@@ -43,5 +51,20 @@ public class ListaActivity extends AppCompatActivity {
         desafiosAdapter = new MyRecyclerViewAdapter(desafioslist);
 
         recyclerViewDesafios.setAdapter(desafiosAdapter);
+    }
+
+
+
+    void setComponentsId(){
+        btnPerfil = findViewById(R.id.activity_lista_cv_perfil);
+    }
+
+    void setComponentsClickListeners(){
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListaActivity.this, PerfilActivity.class));
+            }
+        });
     }
 }

@@ -94,10 +94,10 @@
             android:textColor="@color/primaryBlue"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline12"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_login_edt_password" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/activity_login_tv_forget_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -107,10 +107,10 @@
             android:textColor="@color/primaryBlue"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_login_edt_password" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/activity_login_edt_email"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/input_box"
@@ -125,7 +125,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/activity_login_edt_password"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/input_box"
