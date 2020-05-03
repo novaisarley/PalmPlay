@@ -2,47 +2,35 @@ package com.br.arley.projeto2020.model;
 
 public class Desafio {
 
-    private String Nome;
-    private String Descricao;
-    private String FotoDUrl;
-    private String FotoPUrl;
+    private String nome;
+    private String descricao;
+    private String fotoDUrl;
 
-    public Desafio(String descricao, String nome, String FotoDUrl, String FotoPUrl) {
-        this.Descricao = Descricao;
-        this.Nome = Nome;
-        this.FotoDUrl = FotoDUrl;
-        this.FotoPUrl = FotoPUrl;
-    }
-
-    public String getFotoPUrl() {
-        return FotoPUrl;
-    }
-
-    public void setFotoPUrl(String fotoPUrl) {
-        FotoPUrl = fotoPUrl;
+    public Desafio(String descricao, String nome, String fotoDUrl) {
+        this.descricao = descricao;
+        this.nome = nome;
+        this.fotoDUrl = fotoDUrl;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public void setNome(String nome) {
-        this.Nome = Nome;
-    }
+    public void setNome(String nome) { this.nome = nome;}
 
     public void setDescricao(String descricao) {
-        this.Descricao = Descricao;
+        this.descricao = descricao;
     }
 
     public String getDescricao() {
-        return Descricao;
+        return descricao;
     }
 
     public String getFotoDUrl() {
-        return FotoDUrl;
+        return fotoDUrl;
     }
 
     public void setFotoDUrl(String fotoDUrl) {
-        FotoDUrl = fotoDUrl;
+        fotoDUrl = fotoDUrl;
     }
 }

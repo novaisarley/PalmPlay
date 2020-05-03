@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisterActivity extends AppCompatActivity {
     Button btnSave;
     TextView tvGoToLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,9 +19,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         setComponents();
 
-        btnSave.setOnClickListener(new View.OnClickListener(){
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this, ListaActivity.class));
                 finish();
             }

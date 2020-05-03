@@ -43,7 +43,7 @@ public class DesafiosAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.itens_atividade, parent, false);
+        View view = inflater.inflate(R.layout.item_atividade, parent, false);
 
         TextView tvNome = view.findViewById(R.id.item_atividade_tv_nome);
         TextView tvDescricao = view.findViewById(R.id.item_atividade_tv_descricao);

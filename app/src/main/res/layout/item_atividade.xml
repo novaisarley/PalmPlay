@@ -6,7 +6,10 @@
     android:layout_height="100dp"
     android:background="@drawable/box_list_item"
     android:orientation="horizontal"
-    android:layout_marginTop="20dp">
+    android:layout_marginBottom="30dp"
+    android:elevation="5dp"
+    android:shadowColor="#000"
+    android:shadowRadius="10">
 
 
     <ImageView

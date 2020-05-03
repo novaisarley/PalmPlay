@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_login" />
+        app:srcCompat="@drawable/wppr_roxo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -213,6 +213,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:elevation="4dp"
+        android:background="@drawable/logo_box"
         android:outlineSpotShadowColor="@color/white"
         android:shadowColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
