@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Desafio {
+public class Atividade {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -19,7 +19,7 @@ public class Desafio {
     @ColumnInfo
     private String fotoDUrl;
 
-    public Desafio(String descricao, String nome, String fotoDUrl) {
+    public Atividade(String descricao, String nome, String fotoDUrl) {
         this.descricao = descricao;
         this.nome = nome;
         this.fotoDUrl = fotoDUrl;

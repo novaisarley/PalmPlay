@@ -10,4 +10,8 @@
     <string name="confirmar_senha">Confirmar senha</string>
     <string name="salvar">Salvar</string>
     <string name="preencha_todos_campos">Preencha todos os campos</string>
+    <string name="criar_atividade">Criar Atividade</string>
+    <string name="nome_da_atividade">Nome da atividade</string>
+    <string name="descricao_da_atividade">Descrição da atividade</string>
+    <string name="criar">Criar</string>
 </resources>

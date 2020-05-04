@@ -5,20 +5,19 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.br.arley.projeto2020.model.Desafio;
-import com.br.arley.projeto2020.model.User;
+import com.br.arley.projeto2020.model.Atividade;
 
 import java.util.List;
 
 @Dao
 public interface DesafioDao {
 
-    @Query("SELECT * FROM desafio")
-    public List<Desafio> getAllUsers();
+    @Query("SELECT * FROM Atividade")
+    public List<Atividade> getAllUsers();
 
     @Insert
-    void insertAll(Desafio... desafios);
+    void insertAll(Atividade... atividades);
 
     @Delete
-    void delete(Desafio desafio);
+    void delete(Atividade atividade);
 }

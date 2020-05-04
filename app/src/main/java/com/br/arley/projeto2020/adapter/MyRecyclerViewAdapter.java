@@ -1,4 +1,4 @@
-package com.br.arley.projeto2020.model;
+package com.br.arley.projeto2020.adapter;
 
 
 import android.os.Build;
@@ -14,12 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.br.arley.projeto2020.R;
+import com.br.arley.projeto2020.model.Atividade;
 
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    public List<Desafio> desafioList;
+    public List<Atividade> atividadeList;
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener{
@@ -35,8 +36,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         mListener = listener;
     }
 
-    public MyRecyclerViewAdapter(List<Desafio> desafioList){
-        this.desafioList = desafioList;
+    public MyRecyclerViewAdapter(List<Atividade> atividadeList){
+        this.atividadeList = atividadeList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -65,13 +66,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvName.setText(desafioList.get(position).getNome());
-        holder.tvDescription.setText(desafioList.get(position).getDescricao());
+        holder.tvName.setText(atividadeList.get(position).getNome());
+        holder.tvDescription.setText(atividadeList.get(position).getDescricao());
     }
 
     @Override
     public int getItemCount() {
-        return desafioList.size();
+        return atividadeList.size();
     }
 
 

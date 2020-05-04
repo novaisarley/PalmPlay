@@ -3,6 +3,7 @@ package com.br.arley.projeto2020.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -10,17 +11,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.br.arley.projeto2020.R;
-import com.br.arley.projeto2020.model.Desafio;
-import com.br.arley.projeto2020.model.MyRecyclerViewAdapter;
+import com.br.arley.projeto2020.model.Atividade;
+import com.br.arley.projeto2020.adapter.MyRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
-    RecyclerView recyclerViewDesafios;
-    MyRecyclerViewAdapter desafiosAdapter;
+    RecyclerView recyclerViewAtividades;
+    MyRecyclerViewAdapter atividadesAdapter;
     CardView btnPerfil;
+    ImageButton ibAddAtividade;
 
 
     @Override
@@ -31,30 +33,31 @@ public class ListaActivity extends AppCompatActivity {
         setComponentsId();
         setComponentsClickListeners();
 
-        recyclerViewDesafios =  findViewById(R.id.activity_lista_rv_desafio);
-        recyclerViewDesafios.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewAtividades =  findViewById(R.id.activity_lista_rv_atividade);
+        recyclerViewAtividades.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Desafio> desafioslist = new ArrayList<Desafio>();
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
-        desafioslist.add(new Desafio("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        List<Atividade> atividadesList = new ArrayList<Atividade>();
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
+        atividadesList.add(new Atividade("Descriçãozinha, bem zinha mesmo", "Nome da atv", "@drawable/vector.png"));
 
-        desafiosAdapter = new MyRecyclerViewAdapter(desafioslist);
+        atividadesAdapter = new MyRecyclerViewAdapter(atividadesList);
 
-        recyclerViewDesafios.setAdapter(desafiosAdapter);
+        recyclerViewAtividades.setAdapter(atividadesAdapter);
     }
 
 
 
     void setComponentsId(){
         btnPerfil = findViewById(R.id.activity_lista_cv_perfil);
+        ibAddAtividade = findViewById(R.id.activity_lista_ib_add_atividade);
     }
 
     void setComponentsClickListeners(){
@@ -62,6 +65,13 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ListaActivity.this, PerfilActivity.class));
+            }
+        });
+
+        ibAddAtividade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListaActivity.this, AddAtividadeActivity.class));
             }
         });
     }

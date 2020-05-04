@@ -12,26 +12,26 @@ import android.widget.TextView;
 import java.util.List;
 
 import com.br.arley.projeto2020.R;
-import com.br.arley.projeto2020.model.Desafio;
+import com.br.arley.projeto2020.model.Atividade;
 
-public class DesafiosAdapter extends BaseAdapter {
+public class AtividadesAdapter extends BaseAdapter {
 
-    List<Desafio> desafioList;
+    List<Atividade> atividadeList;
     Context context;
 
-    public DesafiosAdapter(List<Desafio> desafioList, Context context) {
-        this.desafioList = desafioList;
+    public AtividadesAdapter(List<Atividade> atividadeList, Context context) {
+        this.atividadeList = atividadeList;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return desafioList.size();
+        return atividadeList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return desafioList.get(position);
+        return atividadeList.get(position);
     }
 
     @Override
