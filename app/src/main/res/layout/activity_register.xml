@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -117,7 +117,7 @@
             android:layout_height="45dp"
             android:background="@drawable/input_box"
             android:elevation="5dp"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:paddingHorizontal="10dp"
             android:shadowRadius="10"
             app:layout_constraintEnd_toEndOf="parent"
@@ -233,6 +233,15 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonUwsers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

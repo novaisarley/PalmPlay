@@ -9,18 +9,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateActivity"></activity>
-        <activity android:name=".PerfilActivity" />
+        <activity android:name=".AddDesafioActivity"></activity>
+        <activity android:name=".ui.CreateDesafioActivity" />
+        <activity android:name=".ui.CreateActivity" />
+        <activity android:name=".ui.UsersActivity" />
+        <activity android:name=".CreateActivity" />
+        <activity android:name=".ui.PerfilActivity" />
         <activity
-            android:name=".ListaActivity"
+            android:name=".ui.ListaActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.RegisterActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

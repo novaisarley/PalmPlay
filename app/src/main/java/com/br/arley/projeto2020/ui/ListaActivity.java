@@ -1,17 +1,15 @@
-package com.br.arley.projeto2020;
+package com.br.arley.projeto2020.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.br.arley.projeto2020.adapter.DesafiosAdapter;
+import com.br.arley.projeto2020.R;
 import com.br.arley.projeto2020.model.Desafio;
 import com.br.arley.projeto2020.model.MyRecyclerViewAdapter;
 

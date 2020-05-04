@@ -43,6 +43,16 @@
 
         </androidx.cardview.widget.CardView>
 
+        <ImageButton
+            android:id="@+id/activity_lista_ib_add_desafio"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
     </FrameLayout>
 
 
