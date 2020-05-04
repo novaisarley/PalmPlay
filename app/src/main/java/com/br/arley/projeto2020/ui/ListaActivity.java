@@ -48,14 +48,13 @@ public class ListaActivity extends AppCompatActivity {
     }
 
 
-
-    void setComponentsId(){
+    void setComponentsId() {
         btnPerfil = findViewById(R.id.activity_lista_cv_perfil);
         ibAddAtividade = findViewById(R.id.activity_lista_ib_add_atividade);
-        recyclerViewAtividades =  findViewById(R.id.activity_lista_rv_atividade);
+        recyclerViewAtividades = findViewById(R.id.activity_lista_rv_atividade);
     }
 
-    void setComponentsClickListeners(){
+    void setComponentsClickListeners() {
         btnPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +70,7 @@ public class ListaActivity extends AppCompatActivity {
         });
     }
 
-    void builAtividadesRecyclerView(){
+    void builAtividadesRecyclerView() {
         recyclerViewAtividades.setLayoutManager(new LinearLayoutManager(this));
 
         List<Atividade> atividadesList = db.atividadeDao().getAllAtividades();

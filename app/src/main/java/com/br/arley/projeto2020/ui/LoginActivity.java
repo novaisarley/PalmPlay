@@ -106,10 +106,8 @@ public class LoginActivity extends AppCompatActivity {
         String password = user.getPassword();
         List<User> dbUsers = db.userDao().getAllUsers();
 
-        Log.d(TAG, "autenticateUser parametro:" + email + ", " + password);
 
         for(int i = 0; i < dbUsers.size(); i++){
-            Log.d(TAG, "esta na vez de comparar: " + dbUsers.get(i).toString());
             if(dbUsers.get(i).getEmail().equals(email)){
                 if (dbUsers.get(i).getPassword().equals(password)){
                     return true;

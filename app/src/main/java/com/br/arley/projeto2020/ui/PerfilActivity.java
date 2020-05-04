@@ -31,8 +31,6 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         user = currentUser;
-        System.out.println("ADOLETA"+user);
-        System.out.println("ADOLETA"+currentUser);
         setComponents();
         setComponentsClickListeners();
 
