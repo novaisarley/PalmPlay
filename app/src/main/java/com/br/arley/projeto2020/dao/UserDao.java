@@ -15,6 +15,9 @@ public interface UserDao {
     @Query("SELECT * FROM user")
     public List<User> getAllUsers();
 
+    @Query("SELECT * FROM user WHERE email LIKE :email")
+    public User getUserByEmail(String email);
+
     @Insert
     void insertAll(User... users);
 

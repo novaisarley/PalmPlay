@@ -3,7 +3,9 @@ package com.br.arley.projeto2020.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView tvGoToRegister;
     EditText edtEmail, edtPassword;
     AppDataBase db;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     public static User currentUser;
 
     @Override
@@ -32,10 +36,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        db = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "localStorage").allowMainThreadQueries().build();
+
+        if (getLoginStatus()){
+            currentUser = db.userDao().getUserByEmail(getCurrentUserPref());
+            startActivity(new Intent(LoginActivity.this, ListaActivity.class));
+            finish();
+        }
+
         setComponents();
         setComponentsClickListeners();
-
-        db = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "localStorage").allowMainThreadQueries().build();
 
 
 
@@ -64,6 +74,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(autenticateUser(user)){
                         currentUser = user;
+                        setCurrentUserPref(user.getEmail());
+                        setLoginStatus(true);
                         startActivity(new Intent(LoginActivity.this, ListaActivity.class));
                         finish();
                     }
@@ -106,5 +118,33 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    void setLoginStatus(boolean b) {
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putBoolean(getString(R.string.pref_login), b);
+        editor.apply();
+    }
+
+    boolean getLoginStatus(){
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        boolean b = sharedPreferences.getBoolean(getString(R.string.pref_login), false);
+
+        return b;
+    }
+
+    void setCurrentUserPref(String email){
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.current_email), email);
+        editor.apply();
+    }
+
+    String getCurrentUserPref(){
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        String currentEmail = sharedPreferences.getString(getString(R.string.current_email), "");
+
+        return currentEmail;
     }
 }

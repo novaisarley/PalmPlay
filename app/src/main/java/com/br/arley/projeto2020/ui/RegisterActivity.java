@@ -1,6 +1,8 @@
 package com.br.arley.projeto2020.ui;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +25,8 @@ public class RegisterActivity extends AppCompatActivity {
     TextView tvGoToLogin;
     EditText edtEmail, edtPassword, edtConfirmPassword;
     AppDataBase db;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +73,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                             currentUser = user;
 
-                            startActivity(new Intent(RegisterActivity.this, ListaActivity.class));
+                            setCurrentUserPref(currentUser.getEmail());
+                            setLoginStatus(true);
+
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
                         }
                         else{
@@ -117,6 +124,20 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    void setLoginStatus(boolean b) {
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putBoolean(getString(R.string.pref_login), b);
+        editor.apply();
+    }
+
+    void setCurrentUserPref(String email){
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.current_email), email);
+        editor.apply();
     }
 }
 

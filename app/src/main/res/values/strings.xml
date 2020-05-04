@@ -17,4 +17,7 @@
     <string name="email_senha_incorreto">Email ou senha incorreto</string>
     <string name="campos_senha_diferente">Email ou senha incorreto</string>
     <string name="usuario_existente_msg">Usuário já existente, tente outro email</string>
+    <string name="pref_key">app_preferences</string>
+    <string name="pref_login">LOGIN_DONE</string>
+    <string name="current_email">EMAIL_CURRENT</string>
 </resources>

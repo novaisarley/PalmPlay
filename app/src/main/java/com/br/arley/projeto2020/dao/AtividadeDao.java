@@ -13,7 +13,7 @@ import java.util.List;
 public interface AtividadeDao {
 
     @Query("SELECT * FROM atividade")
-    public List<Atividade> getAllUsers();
+    public List<Atividade> getAllAtividades();
 
     @Insert
     void insertAll(Atividade... atividades);
