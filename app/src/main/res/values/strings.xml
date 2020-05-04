@@ -16,4 +16,5 @@
     <string name="criar">Criar</string>
     <string name="email_senha_incorreto">Email ou senha incorreto</string>
     <string name="campos_senha_diferente">Email ou senha incorreto</string>
+    <string name="usuario_existente_msg">Usuário já existente, tente outro email</string>
 </resources>

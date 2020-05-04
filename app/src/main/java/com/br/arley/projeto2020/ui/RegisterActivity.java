@@ -14,6 +14,9 @@ import androidx.room.Room;
 import com.br.arley.projeto2020.R;
 import com.br.arley.projeto2020.db.AppDataBase;
 import com.br.arley.projeto2020.model.User;
+import  static com.br.arley.projeto2020.ui.LoginActivity.currentUser;
+
+import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
     Button btnSave, btnSeeUsers;
@@ -55,11 +58,24 @@ public class RegisterActivity extends AppCompatActivity {
                         !edtConfirmPassword.getText().toString().trim().isEmpty()) {
 
                     if(edtPassword.getText().toString().equals(edtConfirmPassword.getText().toString())){
-                        User user = new User(edtEmail.getText().toString(), edtPassword.
-                                getText().toString());
-                        db.userDao().insertAll(user);
-                        startActivity(new Intent(RegisterActivity.this, ListaActivity.class));
-                        finish();
+
+                        String email = edtEmail.getText().toString();
+                        String password = edtPassword.getText().toString();
+
+                        if (isUserUnique(email)){
+                            User user = new User(email, password);
+
+                            db.userDao().insertAll(user);
+
+                            currentUser = user;
+
+                            startActivity(new Intent(RegisterActivity.this, ListaActivity.class));
+                            finish();
+                        }
+                        else{
+                            Toast.makeText(RegisterActivity.this, R.string.usuario_existente_msg, Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                     else{
                         Toast.makeText(RegisterActivity.this, R.string.campos_senha_diferente, Toast.LENGTH_SHORT).show();
@@ -88,6 +104,19 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(RegisterActivity.this, UsersActivity.class));
             }
         });
+    }
+
+    public boolean isUserUnique(String email){
+
+        List<User> users = db.userDao().getAllUsers();
+
+        for(int i = 0; i < users.size(); i++){
+            if(users.get(i).getEmail().equals(email)){
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 
