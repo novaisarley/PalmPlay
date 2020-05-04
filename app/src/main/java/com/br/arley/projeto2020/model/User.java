@@ -10,9 +10,6 @@ public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo(name = "name")
-    private String name;
-
     @ColumnInfo(name = "email")
     private String email;
 
@@ -25,14 +22,6 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
@@ -51,8 +40,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String name, String email, String password) {
-        this.name = name;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }
@@ -60,6 +48,6 @@ public class User {
     @NonNull
     @Override
     public String toString() {
-        return "id: " + Integer.toString(this.getId()) + ", nome: " + this.getName() + ",  email: " + this.getEmail() + ", senha: " + this.getPassword() + "\n\n";
+        return "id: " + Integer.toString(this.getId()) +",  email: " + this.getEmail() + ", senha: " + this.getPassword() + "\n\n";
     }
 }

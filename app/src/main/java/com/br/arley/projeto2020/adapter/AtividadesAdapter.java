@@ -50,7 +50,6 @@ public class AtividadesAdapter extends BaseAdapter {
         ImageView ivDesafio = view.findViewById(R.id.item_atividade_iv_image);
         ImageButton ibPlay = view.findViewById(R.id.item_atividade_ib_play);
 
-
         return view;
     }
 }

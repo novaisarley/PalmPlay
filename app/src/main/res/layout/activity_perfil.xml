@@ -88,10 +88,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_perfil_tv_email" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_perfil_edt_email" />
 
         <EditText
-            android:id="@+id/activity_perfil_tv_email"
+            android:id="@+id/activity_perfil_edt_email"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:background="@drawable/login_input_box"
@@ -111,7 +111,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
-            android:id="@+id/activity_perfil_tv_password"
+            android:id="@+id/activity_perfil_edt_password"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:background="@drawable/login_input_box"
@@ -141,7 +141,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_perfil_tv_password" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_perfil_edt_password" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

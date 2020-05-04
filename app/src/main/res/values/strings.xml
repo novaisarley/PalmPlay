@@ -14,4 +14,6 @@
     <string name="nome_da_atividade">Nome da atividade</string>
     <string name="descricao_da_atividade">Descrição da atividade</string>
     <string name="criar">Criar</string>
+    <string name="email_senha_incorreto">Email ou senha incorreto</string>
+    <string name="campos_senha_diferente">Email ou senha incorreto</string>
 </resources>

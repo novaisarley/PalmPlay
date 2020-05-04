@@ -115,7 +115,7 @@
             android:layout_height="45dp"
             android:background="@drawable/login_input_box"
             android:elevation="5dp"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:paddingHorizontal="10dp"
             android:shadowRadius="10"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"

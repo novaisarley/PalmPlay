@@ -10,9 +10,9 @@ import com.br.arley.projeto2020.model.Atividade;
 import java.util.List;
 
 @Dao
-public interface DesafioDao {
+public interface AtividadeDao {
 
-    @Query("SELECT * FROM Atividade")
+    @Query("SELECT * FROM atividade")
     public List<Atividade> getAllUsers();
 
     @Insert

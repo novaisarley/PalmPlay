@@ -55,11 +55,14 @@ public class RegisterActivity extends AppCompatActivity {
                         !edtConfirmPassword.getText().toString().trim().isEmpty()) {
 
                     if(edtPassword.getText().toString().equals(edtConfirmPassword.getText().toString())){
-                        User user = new User("Jucelino", edtEmail.getText().toString(), edtPassword.
+                        User user = new User(edtEmail.getText().toString(), edtPassword.
                                 getText().toString());
                         db.userDao().insertAll(user);
                         startActivity(new Intent(RegisterActivity.this, ListaActivity.class));
                         finish();
+                    }
+                    else{
+                        Toast.makeText(RegisterActivity.this, R.string.campos_senha_diferente, Toast.LENGTH_SHORT).show();
                     }
 
 
