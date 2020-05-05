@@ -108,10 +108,10 @@ public class ListaActivity extends AppCompatActivity {
                 if (status == TextToSpeech.SUCCESS){
                     int result = textToSpeech.setLanguage(new Locale ("pt"));
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                    /*if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
                         Toast.makeText(ListaActivity.this, "Lingua nao suportada", Toast.LENGTH_SHORT).show();
 
-                    }
+                    }*/
                 }
                 else{
                     Toast.makeText(ListaActivity.this, "inicializacaofalhou", Toast.LENGTH_SHORT).show();
