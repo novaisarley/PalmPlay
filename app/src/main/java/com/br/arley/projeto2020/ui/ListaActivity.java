@@ -29,7 +29,7 @@ import java.util.Locale;
  *Arley Novais 3CI
  *Isabella Melo 3CI
  *Rebeca Madi 3CI
- * V0.2
+ *V0.2
 */
 
 public class ListaActivity extends AppCompatActivity {
@@ -96,14 +96,16 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onSoundPlayClick(int position) {
                 String descricao = atividadesList.get(position).getDescricao();
-                textToSpeech.setPitch(0.75f);
-                textToSpeech.setSpeechRate(0.8f);
                 textToSpeech.speak(descricao, TextToSpeech.QUEUE_FLUSH, null);
             }
 
             @Override
             public void onAtividadeClick(int position) {
-
+                Intent it = new Intent(ListaActivity.this, EspecificActivity.class);
+                it.putExtra("Nome", atividadesList.get(position).getNome());
+                it.putExtra("Descricao", atividadesList.get(position).getDescricao());
+                it.putExtra("Imagem", atividadesList.get(position).getFotoDUrl());
+                startActivity(it);
             }
         });
     }
@@ -126,6 +128,8 @@ public class ListaActivity extends AppCompatActivity {
                 }
             }
         });
+        textToSpeech.setPitch(0.9f);
+        textToSpeech.setSpeechRate(0.95f);
     }
 
 

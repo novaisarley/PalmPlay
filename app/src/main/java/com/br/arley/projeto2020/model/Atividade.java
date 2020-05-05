@@ -17,9 +17,9 @@ public class Atividade {
     private String descricao;
 
     @ColumnInfo
-    private String fotoDUrl;
+    private int fotoDUrl;
 
-    public Atividade(String nome, String descricao, String fotoDUrl) {
+    public Atividade(String nome, String descricao, int fotoDUrl) {
         this.descricao = descricao;
         this.nome = nome;
         this.fotoDUrl = fotoDUrl;
@@ -47,11 +47,11 @@ public class Atividade {
         return descricao;
     }
 
-    public String getFotoDUrl() {
+    public int getFotoDUrl() {
         return fotoDUrl;
     }
 
-    public void setFotoDUrl(String fotoDUrl) {
+    public void setFotoDUrl(int fotoDUrl) {
         fotoDUrl = fotoDUrl;
     }
 }

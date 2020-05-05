@@ -36,6 +36,7 @@ public class AddAtividadeActivity extends AppCompatActivity {
         btnCriar = findViewById(R.id.activity_add_bt_criar);
         edtNome = findViewById(R.id.activity_add_edt_name);
         edtDescricao = findViewById(R.id.activity_add_edt_description);
+        ibCapa = findViewById(R.id.activity_add_ib_add_capa);
     }
 
     void setComponentsClickListeners() {
@@ -47,11 +48,18 @@ public class AddAtividadeActivity extends AppCompatActivity {
                 String descricao = edtDescricao.getText().toString();
 
                 if (!nome.isEmpty() && !descricao.isEmpty()){
-                    db.atividadeDao().insertAll(new Atividade(nome, descricao, "@drawable/vector.png"));
+                    db.atividadeDao().insertAll(new Atividade(nome, descricao, R.drawable.vector));
                     Toast.makeText(AddAtividadeActivity.this, "Atividade Criada", Toast.LENGTH_SHORT);
                     finish();
                 }
 
+            }
+        });
+
+        ibCapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(AddAtividadeActivity.this, R.string.not_avaliable, Toast.LENGTH_SHORT).show();
             }
         });
     }

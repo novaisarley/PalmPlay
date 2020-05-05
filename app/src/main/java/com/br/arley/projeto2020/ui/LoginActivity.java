@@ -24,7 +24,7 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "Autentication";
     Button btnEntrar;
-    TextView tvGoToRegister;
+    TextView tvGoToRegister, tvEsqueceuSenha;
     EditText edtEmail, edtPassword;
     AppDataBase db;
     private SharedPreferences sharedPreferences;
@@ -43,11 +43,8 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, ListaActivity.class));
             finish();
         }
-
         setComponents();
         setComponentsClickListeners();
-
-
 
         }
 
@@ -58,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         tvGoToRegister = findViewById(R.id.activity_login_tv_cadastre_se);
         edtEmail = findViewById(R.id.activity_login_edt_email);
         edtPassword = findViewById(R.id.activity_login_edt_password);
+        tvEsqueceuSenha = findViewById(R.id.activity_login_tv_forget_password);
     }
 
     void setComponentsClickListeners(){
@@ -96,6 +94,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
+            }
+        });
+
+        tvEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, R.string.not_avaliable, Toast.LENGTH_SHORT).show();
             }
         });
     }

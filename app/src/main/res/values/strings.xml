@@ -20,4 +20,6 @@
     <string name="pref_key">app_preferences</string>
     <string name="pref_login">LOGIN_DONE</string>
     <string name="current_email">EMAIL_CURRENT</string>
+    <string name="jogar">Jogar</string>
+    <string name="not_avaliable">Não disponível</string>
 </resources>

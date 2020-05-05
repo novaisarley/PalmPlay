@@ -50,8 +50,8 @@
                 android:id="@+id/activity_perfil_iv_foto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/minha_cara"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/klinsman"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:background="@drawable/button_box"
+            android:background="@drawable/button_blue_box"
             android:text="Log Out"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white"

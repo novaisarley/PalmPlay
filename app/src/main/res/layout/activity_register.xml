@@ -204,7 +204,7 @@
             android:id="@+id/activity_register_bt_salvar"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:background="@drawable/button_box"
+            android:background="@drawable/button_blue_box"
             android:fontFamily="@font/khula_bold"
             android:text="@string/salvar"
             android:elevation="5dp"

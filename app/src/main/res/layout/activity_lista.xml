@@ -38,7 +38,7 @@
                 android:id="@+id/activity_perfil_iv_foto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/minha_cara"
+                android:src="@drawable/klinsman"
                 android:scaleType="centerCrop"/>
 
         </androidx.cardview.widget.CardView>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvName, tvDescription;
         private ImageButton btnPlay;
+        ImageView ivCapa;
 
         public ViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -49,6 +51,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             tvName = itemView.findViewById(R.id.item_atividade_tv_nome);
             tvDescription = itemView.findViewById(R.id.item_atividade_tv_descricao);
             btnPlay = itemView.findViewById(R.id.item_atividade_ib_play);
+            ivCapa = itemView.findViewById(R.id.item_atividade_iv_image);
 
             btnPlay.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -91,6 +94,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tvName.setText(atividadeList.get(position).getNome());
         holder.tvDescription.setText(atividadeList.get(position).getDescricao());
+        holder.ivCapa.setImageResource(atividadeList.get(position).getFotoDUrl());
     }
 
     @Override
