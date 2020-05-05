@@ -2,8 +2,10 @@ package com.br.arley.projeto2020.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -21,6 +23,7 @@ import static com.br.arley.projeto2020.ui.LoginActivity.currentUser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ListaActivity extends AppCompatActivity {
 
@@ -30,6 +33,7 @@ public class ListaActivity extends AppCompatActivity {
     ImageButton ibAddAtividade;
     AppDataBase db;
     User user;
+    public TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +75,52 @@ public class ListaActivity extends AppCompatActivity {
     }
 
     void builAtividadesRecyclerView() {
+        buildTextToSpeech();
+
         recyclerViewAtividades.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Atividade> atividadesList = db.atividadeDao().getAllAtividades();
+        final List<Atividade> atividadesList = db.atividadeDao().getAllAtividades();
 
         atividadesAdapter = new MyRecyclerViewAdapter(atividadesList);
 
         recyclerViewAtividades.setAdapter(atividadesAdapter);
+
+        atividadesAdapter.setOnItemClickListener(new MyRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onSoundPlayClick(int position) {
+                String descricao = atividadesList.get(position).getDescricao();
+                textToSpeech.setPitch(0.75f);
+                textToSpeech.setSpeechRate(0.8f);
+                textToSpeech.speak(descricao, TextToSpeech.QUEUE_FLUSH, null);
+            }
+
+            @Override
+            public void onAtividadeClick(int position) {
+
+            }
+        });
     }
+
+    private void buildTextToSpeech(){
+        textToSpeech = new TextToSpeech(ListaActivity.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS){
+                    int result = textToSpeech.setLanguage(new Locale ("pt"));
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Toast.makeText(ListaActivity.this, "Lingua nao suportada", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+                else{
+                    Toast.makeText(ListaActivity.this, "inicializacaofalhou", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+    }
+
 
     @Override
     protected void onResume() {
@@ -88,5 +130,14 @@ public class ListaActivity extends AppCompatActivity {
             finish();
         }
         builAtividadesRecyclerView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (textToSpeech != null){
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.br.arley.projeto2020.adapter;
 
 
 import android.os.Build;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +24,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public List<Atividade> atividadeList;
     private OnItemClickListener mListener;
 
-    public interface OnItemClickListener{
-        void onCheckInClick(int position);
-        void onCheckOutClick(int position);
-        void onGoLiveClick(int position);
-        void onKeyButtonClick(int position);
 
+    public interface OnItemClickListener{
+        void onSoundPlayClick(int position);
+        void onAtividadeClick(int position);
     }
 
 
@@ -50,6 +49,30 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             tvName = itemView.findViewById(R.id.item_atividade_tv_nome);
             tvDescription = itemView.findViewById(R.id.item_atividade_tv_descricao);
             btnPlay = itemView.findViewById(R.id.item_atividade_ib_play);
+
+            btnPlay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onSoundPlayClick(position);
+                        }
+                    }
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onAtividadeClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }
