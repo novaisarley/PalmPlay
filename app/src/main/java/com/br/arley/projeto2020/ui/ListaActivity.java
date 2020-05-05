@@ -29,7 +29,7 @@ import java.util.Locale;
  *Arley Novais 3CI
  *Isabella Melo 3CI
  *Rebeca Madi 3CI
- *V0.2
+ *V0.3
 */
 
 public class ListaActivity extends AppCompatActivity {
