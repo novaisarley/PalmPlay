@@ -29,7 +29,7 @@ import java.util.Locale;
  *Arley Novais 3CI
  *Isabella Melo 3CI
  *Rebeca Madi 3CI
- *V0.3
+ *V0.4
 */
 
 public class ListaActivity extends AppCompatActivity {
@@ -118,7 +118,6 @@ public class ListaActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS){
                     int result = textToSpeech.setLanguage(new Locale ("pt"));
-
                     /*if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
                         Toast.makeText(ListaActivity.this, "Lingua nao suportada", Toast.LENGTH_SHORT).show();
 
