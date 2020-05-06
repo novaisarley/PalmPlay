@@ -15,6 +15,7 @@ import androidx.room.Room;
 
 import com.br.arley.projeto2020.R;
 import com.br.arley.projeto2020.db.AppDataBase;
+import com.br.arley.projeto2020.model.Atividade;
 import com.br.arley.projeto2020.model.User;
 import  static com.br.arley.projeto2020.ui.LoginActivity.currentUser;
 
@@ -40,6 +41,23 @@ public class RegisterActivity extends AppCompatActivity {
         setComponentsClickListeners();
 
 
+        if (!getFirstTime()){
+            setFirstTime(true);
+            String aviso1 = "Oi, Professor Klinsman. Tudo bem?\n" +
+                    "Este é o aplicativo correspondente a atividade de mobile do dia 5 de maio de dois mil e vinte.\n" +
+                    "Neste app foi implementada as funções básicas de cadastro, login, vizualização de perfil, cadastro de item de lista e exibição de lista.\n" +
+                    "Só foram completados dois desafios: a implementação do Recycler View e do Room.\n Clique no item abaixo para receber mais instruções. Obrigado";
+
+            String aviso2 = "Para criar uma atividade clique no botão de \"mais\" no canto superior esquerdo.\n" +
+                    "Como a avaliação requer um cadastro de item e vizualização através de lista, nós implementamos a criação dessas atividades mesmo não sendo o objetivo inicial.\n" +
+                    "No objetivo real as atividades serão pequenos jogos que auxiliarão no desenvolvimento do raciocínio lógico de crianças com síndrome de down.\n";
+
+            db.atividadeDao().insertAll(new Atividade("Clique aqui", aviso1, R.drawable.aviso));
+            db.atividadeDao().insertAll(new Atividade("Instruções Iniciais", aviso2, R.drawable.aviso));
+        }
+
+
+
 
     }
 
@@ -57,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (!edtEmail.getText().toString().trim().isEmpty() &&
                         !edtPassword.getText().toString().trim().isEmpty() &&
                         !edtConfirmPassword.getText().toString().trim().isEmpty()) {
@@ -133,11 +152,28 @@ public class RegisterActivity extends AppCompatActivity {
         editor.apply();
     }
 
+
     void setCurrentUserPref(String email){
         sharedPreferences = getSharedPreferences(getString(R.string.pref_key), MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.putString(getString(R.string.current_email), email);
         editor.apply();
     }
+
+    void setFirstTime(boolean b) {
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putBoolean(getString(R.string.pref_first_time), b);
+        editor.apply();
+    }
+
+    boolean getFirstTime(){
+        sharedPreferences = getSharedPreferences(getString(R.string.pref_key), Context.MODE_PRIVATE);
+        boolean b = sharedPreferences.getBoolean(getString(R.string.pref_first_time), false);
+
+        return b;
+    }
+
+
 }
 

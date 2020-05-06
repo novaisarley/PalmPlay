@@ -54,6 +54,8 @@ public class ListaActivity extends AppCompatActivity {
         setComponentsId();
         setComponentsClickListeners();
 
+
+
         builAtividadesRecyclerView();
 
     }
