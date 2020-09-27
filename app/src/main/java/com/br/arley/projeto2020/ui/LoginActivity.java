@@ -1,5 +1,6 @@
 package com.br.arley.projeto2020.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -17,6 +18,11 @@ import android.widget.Toast;
 import com.br.arley.projeto2020.R;
 import com.br.arley.projeto2020.db.AppDataBase;
 import com.br.arley.projeto2020.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnEntrar;
     TextView tvGoToRegister, tvEsqueceuSenha;
     EditText edtEmail, edtPassword;
+    private FirebaseAuth mAuth;
     AppDataBase db;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -35,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
         db = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "localStorage").allowMainThreadQueries().build();
 
@@ -70,7 +78,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     User user = new User(email, password);
 
-                    if(autenticateUser(user)){
+                    //Fazendo Login pelo Room API
+                    /*if(autenticateUser(user)){
                         currentUser = user;
                         setCurrentUserPref(user.getEmail());
                         setLoginStatus(true);
@@ -79,7 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else{
                         Toast.makeText(LoginActivity.this, R.string.email_senha_incorreto, Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
+
+                    authenticateLogin(email, password);
 
 
                 }
@@ -103,6 +114,28 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, R.string.not_avaliable, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    void authenticateLogin(String email, String password){
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            setLoginStatus(true);
+                            startActivity(new Intent(LoginActivity.this, ListaActivity.class));
+                            finish();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, R.string.email_senha_incorreto, Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
     }
 
     public boolean autenticateUser(User user){
@@ -149,5 +182,12 @@ public class LoginActivity extends AppCompatActivity {
         String currentEmail = sharedPreferences.getString(getString(R.string.current_email), "");
 
         return currentEmail;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 }

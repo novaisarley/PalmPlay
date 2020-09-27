@@ -213,14 +213,13 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:elevation="4dp"
-        android:background="@drawable/logo_box"
         android:outlineSpotShadowColor="@color/white"
         android:shadowColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:srcCompat="@drawable/login_logo" />
+        app:srcCompat="@drawable/logo_app" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

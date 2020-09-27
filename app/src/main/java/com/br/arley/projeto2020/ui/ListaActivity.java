@@ -21,7 +21,6 @@ import com.br.arley.projeto2020.model.User;
 
 import static com.br.arley.projeto2020.ui.LoginActivity.currentUser;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -45,7 +44,7 @@ public class ListaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista);
+        setContentView(R.layout.activity_lista_jogos);
 
         db = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "localStorage").allowMainThreadQueries().build();
 
@@ -53,6 +52,7 @@ public class ListaActivity extends AppCompatActivity {
 
         setComponentsId();
         setComponentsClickListeners();
+
 
 
 

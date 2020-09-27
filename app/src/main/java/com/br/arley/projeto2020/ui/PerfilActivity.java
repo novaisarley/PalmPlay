@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.br.arley.projeto2020.R;
 import com.br.arley.projeto2020.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static com.br.arley.projeto2020.ui.LoginActivity.currentUser;
 
@@ -26,6 +28,8 @@ public class PerfilActivity extends AppCompatActivity {
     EditText edtEmail, edtPassword;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
 
     @Override
@@ -33,12 +37,15 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        user = currentUser;
+        //user = currentUser;
         setComponents();
         setComponentsClickListeners();
 
-        edtEmail.setText(user.getEmail());
-        edtPassword.setText(user.getPassword());
+        firebaseAuth = firebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+
+        edtEmail.setText(firebaseUser.getEmail());
+        //edtPassword.setText(user.getPassword());
 
     }
 

@@ -46,6 +46,7 @@
         <ImageButton
             android:id="@+id/activity_lista_ib_add_atividade"
             android:layout_width="60dp"
+            android:visibility="gone"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|left"
             android:layout_marginLeft="10dp"

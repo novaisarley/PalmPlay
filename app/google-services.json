@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "170804377862",
+    "firebase_url": "https://palm-play-fab04.firebaseio.com",
+    "project_id": "palm-play-fab04",
+    "storage_bucket": "palm-play-fab04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170804377862:android:6a80df3666c9ae37918687",
+        "android_client_info": {
+          "package_name": "com.br.arley.projeto2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170804377862-h6ul8362rlvqcueb3n6o3r3al6un9795.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.br.arley.projeto2020",
+            "certificate_hash": "38b11395912c391b888f51312fac4a98a90332ff"
+          }
+        },
+        {
+          "client_id": "170804377862-du5ej25t4oellffn8q0jof97j54m6f5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZN0p8lGfK9WwL-eo4waI1dkiSvtF6UL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170804377862-du5ej25t4oellffn8q0jof97j54m6f5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
